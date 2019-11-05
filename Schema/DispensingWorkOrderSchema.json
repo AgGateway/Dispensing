@@ -1,0 +1,729 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "required": [
+    "dispensingWorkOrder"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dispensingWorkOrder": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "header",
+          "workOrderIdentifier",
+          "workOrderCreationDateTime",
+          "workOrderType",
+          "productGroup"
+        ],
+        "properties": {
+          "header": {
+            "$ref": "#/definitions/headerStructure"
+          },
+          "workOrderIdentifier": {
+            "$ref": "#/definitions/identifierStructure"
+          },
+          "workOrderCreationDateTime": {
+            "$ref": "#/definitions/datetime"
+          },
+          "workOrderType": {
+            "$ref": "#/definitions/workTypeCodeList"
+          },
+          "reference": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/referenceStructure"
+            }
+          },
+          "numberOfBatches": {
+            "$ref": "#/definitions/integer"
+          },
+          "batchAmount": {
+            "$ref": "#/definitions/valueUnitStructure"
+          },
+          "physicalState": {
+            "$ref": "#/definitions/physicalStateCodeList"
+          },
+          "requestedArea": {
+            "$ref": "#/definitions/valueUnitStructure"
+          },
+          "requestedLocation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/locationStructure"
+            }
+          },
+          "dispensingStartDateTime": {
+            "$ref": "#/definitions/datetime"
+          },
+          "dispensingEndDateTime": {
+            "$ref": "#/definitions/datetime"
+          },
+          "orderLineNumber": {
+            "$ref": "#/definitions/integer"
+          },
+          "groupPhase": {
+            "$ref": "#/definitions/string"
+          },
+          "groupName": {
+            "$ref": "#/definitions/string"
+          },
+          "groupDescription": {
+            "$ref": "#/definitions/string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/commentsStructure"
+            }
+          },
+          "parties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "buyer": {
+                "$ref": "#/definitions/partyStructure"
+              },
+              "seller": {
+                "$ref": "#/definitions/partyStructure"
+              },
+              "shipTo": {
+                "$ref": "#/definitions/partyStructure"
+              },
+              "deliverTo": {
+                "$ref": "#/definitions/partyStructure"
+              },
+              "billTo": {
+                "$ref": "#/definitions/partyStructure"
+              },
+              "other": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/partyStructure"
+                }
+              }
+            }
+          },
+          "productGroup": {
+            "type": "array",
+            "required": [
+              "identifier",
+              "product"
+            ],
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "identifier": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/identifierStructure"
+                  }
+                },
+                "formulation": {
+                  "$ref": "#/definitions/string"
+                },
+                "guaranteedAnalysis": {
+                  "$ref": "#/definitions/string"
+                },
+                "version": {
+                  "$ref": "#/definitions/string"
+                },
+                "weighupType": {
+                  "$ref": "#/definitions/string"
+                },
+                "updateFormulaDefinition": {
+                  "$ref": "#/definitions/boolean"
+                },
+                "density": {
+                  "$ref": "#/definitions/valueUnitStructure"
+                },
+                "destinationContainer": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/containerStructure"
+                  }
+                },
+                "product": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/productStructure"
+                  }
+                }
+              }
+            }
+          },
+          "transportationInformation": {
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "required": [
+                "identifier",
+                "grossWeight",
+                "tareWeight"
+              ],
+              "properties": {
+                "identifier": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/identifierStructure"
+                  }
+                },
+                "grossWeight": {
+                  "$ref": "#/definitions/valueUnitStructure"
+                },
+                "tareWeight": {
+                  "$ref": "#/definitions/valueUnitStructure"
+                }
+              }
+            }
+          },
+          "associatedDocument": {
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "required": [
+                "identifier",
+                "extension",
+                "documentType"
+              ],
+              "properties": {
+                "identifier": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/identifierStructure"
+                  }
+                },
+                "extension": {
+                  "$ref": "#/definitions/string"
+                },
+                "file": {
+                  "$ref": "#/definitions/string"
+                },
+                "fileName": {
+                  "$ref": "#/definitions/string"
+                },
+                "documentType": {
+                  "$ref": "#/definitions/documentTypeCodeList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "string": {
+      "type": "string"
+    },
+    "boolean": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "number": {
+      "type": "number"
+    },
+    "integer": {
+      "type": "integer"
+    },
+    "datetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "acknowledgeReasonCodeList": {
+      "title": "acknowledgeReasonCodeList",
+      "enum": [
+        "EquipmentDown",
+        "InsufficientInventory",
+        "WrongProduct",
+        "InsufficientData"
+      ]
+    },
+    "addressTypeCodeList": {
+      "title": "addressTypeCodeList",
+      "enum": [
+        "billing",
+        "mailing",
+        "operational",
+        "physical"
+      ]
+    },
+    "agencyCodeList": {
+      "title": "agencyCodeList",
+      "enum": [
+        "GS1",
+        "GLN",
+        "GTIN",
+        "AssignedBySender",
+        "AssignedByReciever",
+        "AssignedByOriginator",
+        "AssignedBySeller",
+        "AssignedByBuyer",
+        "AssignedByManufacturer",
+        "AssignedByMixer",
+        "AGIIS",
+        "UN_REC_20",
+        "ANSI",
+        "Custom"
+      ]
+    },
+    "commentTypeCodeList": {
+      "title": "commentTypeCodeList",
+      "enum": [
+        "BolComment",
+        "MixingInstructions",
+        "ApplicatorNotes"
+      ]
+    },
+    "coordinateTypeCodeList": {
+      "title": "coordinateTypeCodeList",
+      "enum": [
+        "Line",
+        "MultiLine",
+        "MultiPoint",
+        "MultiPolygon",
+        "Point",
+        "Polygon"
+      ]
+    },
+    "countryCodeList": {
+      "title": "countryCodeList - ISO 3166 alpha-3",
+      "enum": [
+        "USA",
+        "CAN",
+        "MEX"
+      ]
+    },
+    "documentTypeCodeList": {
+      "title": "documentTypeCodeList",
+      "enum": [
+        "ApplicationInstructions",
+        "BillOfLading",
+        "CustomDocument",
+        "Customs",
+        "Invoice",
+        "Manifest",
+        "Order",
+        "PurchaseOrder",
+        "Waybill"
+      ]
+    },
+    "orderStatusCodeList": {
+      "title": "orderStatusCodeList",
+      "enum": [
+        "complete",
+        "inProgress"
+      ]
+    },
+    "partyTypeCodeList": {
+      "title": "partyTypeCodeList",
+      "enum": [
+        "Beneficial",
+        "BillTo",
+        "Buyer",
+        "Carrier",
+        "DeliverTo",
+        "Dispenser",
+        "DispensingPoint",
+        "Driver",
+        "Consignee",
+        "ConsigneePoint",
+        "Farm",
+        "Field",
+        "Grower",
+        "Other",
+        "Payer",
+        "Seller",
+        "ShipTo",
+        "ShipToPoint",
+        "ThirdParty"
+      ]
+    },
+    "physicalStateCodeList": {
+      "title": "physicalStateCodeList",
+      "enum": [
+        "dry",
+        "liquid"
+      ]
+    },
+    "referenceTypeCodeList": {
+      "title": "referenceTypeCodeList",
+      "enum": [
+        "ApplicationInstructions",
+        "BillingInstructions",
+        "BillOfLading",
+        "Customs",
+        "Comment",
+        "Invoice",
+        "Manifest",
+        "Order",
+        "PurchaseOrder",
+        "Release",
+        "SalesOrder",
+        "Transaction",
+        "Waybill"
+      ]
+    },
+    "workTypeCodeList": {
+      "title": "workTypeCodeList",
+      "enum": [
+        "create",
+        "update",
+        "cancel",
+        "hold"
+      ]
+    },
+    "addressStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "addressType": {
+          "$ref": "#/definitions/addressTypeCodeList"
+        },
+        "addressLine": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/string"
+          }
+        },
+        "cityName": {
+          "$ref": "#/definitions/string"
+        },
+        "region": {
+          "$ref": "#/definitions/string"
+        },
+        "postalCode": {
+          "$ref": "#/definitions/string"
+        },
+        "countryCode": {
+          "$ref": "#/definitions/countryCodeList"
+        }
+      }
+    },
+    "commentsStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "commentType",
+        "comment"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/identifierStructure"
+          }
+        },
+        "commentType": {
+          "$ref": "#/definitions/commentTypeCodeList"
+        },
+        "comment": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "contactStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/string"
+        },
+        "phone": {
+          "$ref": "#/definitions/string"
+        },
+        "email": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "containerStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "capacity"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/identifierStructure"
+          }
+        },
+        "capacity": {
+          "$ref": "#/definitions/valueUnitStructure"
+        },
+        "requestedQuantity": {
+          "$ref": "#/definitions/valueUnitStructure"
+        }
+      }
+    },
+    "coordinatesStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordinateType",
+        "point"
+      ],
+      "properties": {
+        "coordinateType": {
+          "$ref": "#/definitions/coordinateTypeCodeList"
+        },
+        "point": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pointStructure"
+          }
+        }
+      }
+    },
+    "headerStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sender",
+        "receiver",
+        "thisDocumentIdentifier",
+        "creationDateTime"
+      ],
+      "properties": {
+        "sender": {
+          "$ref": "#/definitions/identifierStructure"
+        },
+        "receiver": {
+          "$ref": "#/definitions/identifierStructure"
+        },
+        "thisDocumentIdentifier": {
+          "$ref": "#/definitions/uuid"
+        },
+        "correlationIdentifier": {
+          "$ref": "#/definitions/uuid"
+        },
+        "creationDateTime": {
+          "$ref": "#/definitions/datetime"
+        }
+      }
+    },
+    "identifierStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "agency"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/string"
+        },
+        "description": {
+          "$ref": "#/definitions/string"
+        },
+        "number": {
+          "$ref": "#/definitions/string"
+        },
+        "id": {
+          "$ref": "#/definitions/string"
+        },
+        "agency": {
+          "$ref": "#/definitions/agencyCodeList"
+        }
+      }
+    },
+    "imageStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/string"
+        },
+        "base64Image": {
+          "$ref": "#/definitions/string"
+        },
+        "filename": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "locationStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inclusionCoordinates"
+      ],
+      "properties": {
+        "inclusionCoordinates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coordinatesStructure"
+          }
+        },
+        "exclusionCoordinates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coordinatesStructure"
+          }
+        }
+      }
+    },
+    "partyStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/identifierStructure"
+          }
+        },
+        "partyType": {
+          "$ref": "#/definitions/partyTypeCodeList"
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/addressStructure"
+          }
+        },
+        "location": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/locationStructure"
+          }
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/contactStructure"
+          }
+        },
+        "image": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/imageStructure"
+          }
+        }
+      }
+    },
+    "pointStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lat",
+        "lon"
+      ],
+      "properties": {
+        "lat": {
+          "$ref": "#/definitions/number"
+        },
+        "lon": {
+          "$ref": "#/definitions/number"
+        }
+      }
+    },
+    "productStructure": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "requestedQuantity"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/identifierStructure"
+            }
+          },
+          "mixSequence": {
+            "$ref": "#/definitions/integer"
+          },
+          "isCarrier": {
+            "$ref": "#/definitions/boolean"
+          },
+          "physicalState": {
+            "$ref": "#/definitions/physicalStateCodeList"
+          },
+          "density": {
+            "$ref": "#/definitions/valueUnitStructure"
+          },
+          "requestedQuantity": {
+            "$ref": "#/definitions/valueUnitStructure"
+          },
+          "crop": {
+            "$ref": "#/definitions/string"
+          },
+          "dot": {
+            "$ref": "#/definitions/string"
+          },
+          "epa": {
+            "$ref": "#/definitions/string"
+          },
+          "permit": {
+            "$ref": "#/definitions/string"
+          },
+          "previousCrop": {
+            "$ref": "#/definitions/string"
+          },
+          "sourceContainer": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/containerStructure"
+            }
+          }
+        }
+      }
+    },
+    "referenceStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "referenceType",
+        "value"
+      ],
+      "properties": {
+        "referenceType": {
+          "$ref": "#/definitions/referenceTypeCodeList"
+        },
+        "value": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "valueUnitStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "uom",
+        "agency"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/number"
+        },
+        "uom": {
+          "$ref": "#/definitions/string"
+        },
+        "agency": {
+          "$ref": "#/definitions/agencyCodeList"
+        }
+      }
+    }
+  }
+}

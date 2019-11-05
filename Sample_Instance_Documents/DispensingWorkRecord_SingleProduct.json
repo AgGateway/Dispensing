@@ -1,0 +1,190 @@
+[
+  {
+    "Header": {
+      "CreationDateTime": "2019-10-09T16:16:23.848-04:00",
+      "Receiver": {
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Organization 2",
+            "Number": "00000"
+          }
+        ]
+      },
+      "Sender": {
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Organization 1",
+            "Number": "00000"
+          }
+        ]
+      },
+      "ThisDocumentIdentifier": "00000000-0000-0000-0000-000000000000"
+    },
+    "PhysicalState": 1,
+    "Reference": [
+      {
+        "ReferenceType": 8,
+        "Value": "FF55500123"
+      },
+      {
+        "ReferenceType": 4,
+        "Value": "This is a sample comment!"
+      }
+    ],
+    "RequestedArea": {
+      "Agency": 11,
+      "Uom": "ACR",
+      "Value": 1000
+    },
+    "TransportInformation": [
+      {
+        "GrossWeight": {
+          "Agency": 11,
+          "Uom": "LBR",
+          "Value": 64000
+        },
+        "Identifier": [
+          {
+            "Agency": 0,
+            "Name": "Bob's Truck",
+            "Number": "1"
+          }
+        ],
+        "TareWeight": {
+          "Agency": 11,
+          "Uom": "LBR",
+          "Value": 12000
+        }
+      }
+    ],
+    "WorkOrderCreationDateTime": "2019-10-09T16:16:23.848-04:00",
+    "WorkOrderIdentifier": {
+      "Agency": 5,
+      "Number": "000123"
+    },
+    "ActualArea": {
+      "Agency": 11,
+      "Uom": "ACR",
+      "Value": 1005
+    },
+    "BatchNumber": 1,
+    "Parties": {
+      "OtherParty": [
+        {
+          "Address": [
+            {
+              "AddressLine": [
+                "ATTN: Adam",
+                "123 Some St."
+              ],
+              "AddressType": 2,
+              "CityName": "Nowhere",
+              "CountryCode": "US",
+              "PostalCode": "12345-AB",
+              "Region": "WA"
+            }
+          ],
+          "Contact": [
+            {
+              "Email": "email@example.com",
+              "Name": "Adam",
+              "Phone": "(555) 555-5555"
+            }
+          ],
+          "Identifier": [
+            {
+              "Agency": 5,
+              "Name": "Ray's Fertilizer",
+              "Number": "00000"
+            }
+          ]
+        }
+      ],
+      "ShipTo": {
+        "Address": [
+          {
+            "AddressLine": [
+              "ATTN: Adam",
+              "123 Some St."
+            ],
+            "AddressType": 2,
+            "CityName": "Nowhere",
+            "CountryCode": "US",
+            "PostalCode": "12345-AB",
+            "Region": "WA"
+          }
+        ],
+        "Contact": [
+          {
+            "Email": "email@example.com",
+            "Name": "Adam",
+            "Phone": "(555) 555-5555"
+          }
+        ],
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Adam's Back 40",
+            "Number": "00000"
+          }
+        ]
+      },
+      "Driver": {
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Bob Bobson",
+            "Number": "00000"
+          }
+        ]
+      }
+    },
+    "ProductGroup": [
+      {
+        "GuaranteedAnalysis": "32-0-0",
+        "Identifier": [
+          {
+            "Agency": 0,
+            "Name": "32%",
+            "Number": "00105"
+          }
+        ],
+        "Product": [
+          {
+            "Density": {
+              "Agency": 11,
+              "Uom": "GE",
+              "Value": 8.34
+            },
+            "Identifier": [
+              {
+                "Agency": 0,
+                "Name": "32%",
+                "Number": "00054"
+              }
+            ],
+            "IsCarrier": true,
+            "PhysicalState": 1,
+            "RequestedQuantity": {
+              "Agency": 11,
+              "Uom": "GLL",
+              "Value": 4375
+            },
+            "ActualQuantity": {
+              "Agency": 11,
+              "Uom": "GLL",
+              "Value": 4405
+            }
+          }
+        ]
+      }
+    ],
+    "WorkRecordCreationDateTime": "2019-10-09T16:16:23.848-04:00",
+    "WorkRecordIdentifier": {
+      "Agency": 5,
+      "Number": "9000524"
+    }
+  }
+]

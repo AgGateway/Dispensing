@@ -1,0 +1,237 @@
+[
+  {
+    "Header": {
+      "CreationDateTime": "2019-10-09T16:16:23.898-04:00",
+      "Receiver": {
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Organization 2",
+            "Number": "00000"
+          }
+        ]
+      },
+      "Sender": {
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Organization 1",
+            "Number": "00000"
+          }
+        ]
+      },
+      "ThisDocumentIdentifier": "00000000-0000-0000-0000-000000000000"
+    },
+    "PhysicalState": 1,
+    "Reference": [
+      {
+        "ReferenceType": 8,
+        "Value": "FF55500123"
+      },
+      {
+        "ReferenceType": 4,
+        "Value": "This is a sample comment!"
+      }
+    ],
+    "RequestedArea": {
+      "Agency": 11,
+      "Uom": "ACR",
+      "Value": 1000
+    },
+    "WorkOrderCreationDateTime": "2019-10-09T16:16:23.898-04:00",
+    "WorkOrderIdentifier": {
+      "Agency": 5,
+      "Number": "000123"
+    },
+    "Parties": {
+      "Buyer": {
+        "Address": [
+          {
+            "AddressLine": [
+              "ATTN: Adam",
+              "123 Some St."
+            ],
+            "AddressType": 2,
+            "CityName": "Nowhere",
+            "CountryCode": "US",
+            "PostalCode": "12345-AB",
+            "Region": "WA"
+          }
+        ],
+        "Contact": [
+          {
+            "Email": "email@example.com",
+            "Name": "Adam",
+            "Phone": "(555) 555-5555"
+          }
+        ],
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Adam's Farm",
+            "Number": "00000"
+          }
+        ]
+      },
+      "DeliverTo": {
+        "Address": [
+          {
+            "AddressLine": [
+              "ATTN: Adam",
+              "123 Some St."
+            ],
+            "AddressType": 2,
+            "CityName": "Nowhere",
+            "CountryCode": "US",
+            "PostalCode": "12345-AB",
+            "Region": "WA"
+          }
+        ],
+        "Contact": [
+          {
+            "Email": "email@example.com",
+            "Name": "Adam",
+            "Phone": "(555) 555-5555"
+          }
+        ],
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Adam's Back 40",
+            "Number": "00000"
+          }
+        ]
+      },
+      "OtherParty": [
+        {
+          "Identifier": [
+            {
+              "Agency": 5,
+              "Name": "Reseller",
+              "Number": "00000"
+            }
+          ]
+        }
+      ],
+      "ShipTo": {
+        "Address": [
+          {
+            "AddressLine": [
+              "ATTN: Adam",
+              "123 Some St."
+            ],
+            "AddressType": 2,
+            "CityName": "Nowhere",
+            "CountryCode": "US",
+            "PostalCode": "12345-AB",
+            "Region": "WA"
+          }
+        ],
+        "Contact": [
+          {
+            "Email": "email@example.com",
+            "Name": "Adam",
+            "Phone": "(555) 555-5555"
+          }
+        ],
+        "Identifier": [
+          {
+            "Agency": 5,
+            "Name": "Adam's Back 40",
+            "Number": "00000"
+          }
+        ]
+      }
+    },
+    "ProductGroup": [
+      {
+        "GuaranteedAnalysis": "28-0-0",
+        "Identifier": [
+          {
+            "Agency": 0,
+            "Name": "28%",
+            "Number": "00133"
+          }
+        ],
+        "Product": [
+          {
+            "Density": {
+              "Agency": 11,
+              "Uom": "GE",
+              "Value": 8.34
+            },
+            "Identifier": [
+              {
+                "Agency": 0,
+                "Name": "32%",
+                "Number": "00054"
+              }
+            ],
+            "IsCarrier": true,
+            "PhysicalState": 1,
+            "RequestedQuantity": {
+              "Agency": 11,
+              "Uom": "GLL",
+              "Value": 4375
+            }
+          },
+          {
+            "Density": {
+              "Agency": 11,
+              "Uom": "GE",
+              "Value": 8.34
+            },
+            "Identifier": [
+              {
+                "Agency": 0,
+                "Name": "Water",
+                "Number": "00023"
+              }
+            ],
+            "IsCarrier": true,
+            "PhysicalState": 1,
+            "RequestedQuantity": {
+              "Agency": 11,
+              "Uom": "GLL",
+              "Value": 625
+            }
+          }
+        ]
+      },
+      {
+        "GuaranteedAnalysis": "0-0-0 w\/ Weed Killer 3000",
+        "Identifier": [
+          {
+            "Agency": 0,
+            "Name": "Weed Killer 3000",
+            "Number": "05573"
+          }
+        ],
+        "Product": [
+          {
+            "Density": {
+              "Agency": 11,
+              "Uom": "GE",
+              "Value": 8.34
+            },
+            "Identifier": [
+              {
+                "Agency": 0,
+                "Name": "Weed Killer 3000",
+                "Number": "00057"
+              }
+            ],
+            "IsCarrier": false,
+            "PhysicalState": 1,
+            "RequestedQuantity": {
+              "Agency": 11,
+              "Uom": "GLL",
+              "Value": 50
+            }
+          }
+        ]
+      }
+    ],
+    "WorkOrderType": 0
+  }
+]
