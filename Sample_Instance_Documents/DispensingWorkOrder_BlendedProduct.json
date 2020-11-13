@@ -146,6 +146,17 @@
     "ProductGroup": [
       {
         "GuaranteedAnalysis": "28-0-0",
+        "guaranteedAnalysisDetail": {
+          "nutrients": [
+            {
+              "nutrient": {
+                "abbreviation": "N",
+                "nutrientDescription": "Total Nitrogen",
+                "percentage": 20
+              }
+            }
+          ]
+        },
         "Identifier": [
           {
             "Agency": 0,
