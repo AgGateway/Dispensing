@@ -152,8 +152,6 @@
                 "abbreviation": "N",
                 "nutrientDescription": "Total Nitrogen",
                 "percentage": 20,
-                "minPercentage": 18,
-                "maxPercentage": 25,
                 "nutrientSources": [
                   {
                     "sourceDescription": "Urea Nitrogen",
