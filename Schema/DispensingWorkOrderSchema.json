@@ -127,6 +127,9 @@
                 "guaranteedAnalysis": {
                   "$ref": "#/definitions/string"
                 },
+                "guaranteedAnalysisDetail": {
+                  "$ref": "#/definitions/guaranteedAnalysisDetail"
+                },
                 "version": {
                   "$ref": "#/definitions/string"
                 },
@@ -722,6 +725,73 @@
         },
         "agency": {
           "$ref": "#/definitions/agencyCodeList"
+        }
+      }
+    },
+    "guaranteedAnalysisDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nutrients": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+			"required": [
+					"nutrient"
+				],
+            "properties": {
+              "nutrient": {
+                "$ref": "#/definitions/nutrient"
+              },
+              "warning": {
+                "$ref": "#/definitions/string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nutrient": {
+      "type": "object",
+      "additionalProperties": false,
+	  "required": [
+					"abbreviation",
+					"percentage"
+				],
+      "properties": {
+        "abbreviation": {
+          "$ref": "#/definitions/string"
+        },
+        "nutrientDescription": {
+          "$ref": "#/definitions/string"
+        },
+        "percentage": {
+          "$ref": "#/definitions/number"
+        },
+        "minPercentage": {
+          "$ref": "#/definitions/number"
+        },
+        "maxPercentage": {
+          "$ref": "#/definitions/number"
+        },
+        "nutrientSources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/nutrientSource"
+          }
+        }
+      }
+    },
+    "nutrientSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sourceDescription": {
+          "$ref": "#/definitions/string"
+        },
+        "percentage": {
+          "$ref": "#/definitions/number"
         }
       }
     }
