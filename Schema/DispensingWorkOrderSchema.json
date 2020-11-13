@@ -737,9 +737,9 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-			"required": [
-					"nutrient"
-				],
+            "required": [
+              "nutrient"
+            ],
             "properties": {
               "nutrient": {
                 "$ref": "#/definitions/nutrient"
@@ -755,10 +755,10 @@
     "nutrient": {
       "type": "object",
       "additionalProperties": false,
-	  "required": [
-					"abbreviation",
-					"percentage"
-				],
+      "required": [
+        "abbreviation",
+        "percentage"
+      ],
       "properties": {
         "abbreviation": {
           "$ref": "#/definitions/string"
