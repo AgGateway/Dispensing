@@ -20,7 +20,7 @@
           }
         ]
       },
-      "ThisDocumentIdentifier": "00000000-0000-0000-0000-000000000000"
+      "ThisDocumentIdentifier": "2c8f87a0-09c0-4aaf-857f-177793c8fc3b"
     },
     "PhysicalState": 1,
     "Reference": [
@@ -143,7 +143,39 @@
     },
     "ProductGroup": [
       {
-        "GuaranteedAnalysis": "28-0-0",
+        "GuaranteedAnalysis": "20-0-0",
+        "guaranteedAnalysisDetail": {
+          "nutrients": [
+            {
+              "warning": "",
+              "nutrient": {
+                "abbreviation": "N",
+                "nutrientDescription": "Total Nitrogen",
+                "percentage": 20,
+                "minPercentage": 18,
+                "maxPercentage": 25,
+                "nutrientSources": [
+                  {
+                    "sourceDescription": "Urea Nitrogen",
+                    "percentage": 8
+                  },
+                  {
+                    "sourceDescription": "Water Insoluble Nitrogen",
+                    "percentage": 7.1
+                  },
+                  {
+                    "sourceDescription": "Slowly Available Water Soluble Nitrogen",
+                    "percentage": 2.9
+                  },
+                  {
+                    "sourceDescription": "Other  Water Soluble Nitrogen",
+                    "percentage": 2
+                  }
+                ]
+              }
+            }
+          ]
+        },
         "Identifier": [
           {
             "Agency": 0,
