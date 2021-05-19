@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "required": [
+    "acknowledgeWorkOrderReceipt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "acknowledgeWorkOrderReceipt": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "header",
+          "workOrderIdentifier",
+          "acknowledgeWorkOrderDateTime",
+          "acknowledgeWorkOrderStatusCode"
+        ],
+        "properties": {
+          "header": {
+            "$ref": "#/definitions/headerStructure"
+          },
+          "workOrderIdentifier": {
+            "$ref": "#/definitions/identifierStructure"
+          },
+          "reference": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/referenceStructure"
+            }
+          },
+          "acknowledgeWorkOrderStatusCode": {
+            "$ref": "#/definitions/acknowledgeWorkOrderStatusCode"
+          },
+          "acknowledgeWorkOrderDateTime": {
+            "$ref": "#/definitions/datetime"
+          },
+          "plannedCompletionDateTime": {
+            "$ref": "#/definitions/datetime"
+          },
+          "reasons": {
+            "type": "array",
+            "additionalProperties": false,
+            "items": {
+              "properties": {
+                "reasonCode": {
+                  "$ref": "#/definitions/reasonCode"
+                },
+                "reason": {
+                  "$ref": "#/definitions/string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "string": {
+      "type": "string"
+    },
+    "boolean": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "number": {
+      "type": "number"
+    },
+    "integer": {
+      "type": "integer"
+    },
+    "datetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reasonCode": {
+      "title": "reasonCode",
+      "enum": [
+        "EquipmentDown",
+        "InsufficientInventory",
+        "WrongProduct",
+        "InsufficientData"
+      ]
+    },
+    "referenceStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "referenceType",
+        "value"
+      ],
+      "properties": {
+        "referenceType": {
+          "$ref": "#/definitions/referenceTypeCodeList"
+        },
+        "value": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "acknowledgeWorkOrderStatusCode": {
+      "title": "acknowledgeWorkOrderStatusCode",
+      "enum": [
+        "accepted",
+        "rejected"
+      ]
+    },
+    "agencyCodeList": {
+      "title": "agencyCodeList",
+      "enum": [
+        "GS1",
+        "GLN",
+        "GTIN",
+        "AssignedBySender",
+        "AssignedByReciever",
+        "AssignedByOriginator",
+        "AssignedBySeller",
+        "AssignedByBuyer",
+        "AssignedByManufacturer",
+        "AssignedByMixer",
+        "AGIIS",
+        "UN_REC_20",
+        "ANSI",
+        "Custom"
+      ]
+    },
+    "referenceTypeCodeList": {
+      "title": "referenceTypeCodeList",
+      "enum": [
+        "ApplicationInstructions",
+        "BillingInstructions",
+        "BillOfLading",
+        "Customs",
+        "Comment",
+        "Invoice",
+        "Manifest",
+        "Order",
+        "PurchaseOrder",
+        "Release",
+        "SalesOrder",
+        "Transaction",
+        "Waybill"
+      ]
+    },
+    "commentsStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "commentType",
+        "comment"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/identifierStructure"
+          }
+        },
+        "commentType": {
+          "$ref": "#/definitions/commentTypeCodeList"
+        },
+        "comment": {
+          "$ref": "#/definitions/string"
+        }
+      }
+    },
+    "headerStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sender",
+        "receiver",
+        "thisDocumentIdentifier",
+        "creationDateTime"
+      ],
+      "properties": {
+        "sender": {
+          "$ref": "#/definitions/identifierStructure"
+        },
+        "receiver": {
+          "$ref": "#/definitions/identifierStructure"
+        },
+        "thisDocumentIdentifier": {
+          "$ref": "#/definitions/uuid"
+        },
+        "correlationIdentifier": {
+          "$ref": "#/definitions/uuid"
+        },
+        "creationDateTime": {
+          "$ref": "#/definitions/datetime"
+        }
+      }
+    },
+    "identifierStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "agency"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/string"
+        },
+        "description": {
+          "$ref": "#/definitions/string"
+        },
+        "number": {
+          "$ref": "#/definitions/string"
+        },
+        "id": {
+          "$ref": "#/definitions/string"
+        },
+        "agency": {
+          "$ref": "#/definitions/agencyCodeList"
+        }
+      }
+    },
+    "commentTypeCodeList": {
+      "title": "commentTypeCodeList",
+      "enum": [
+        "BolComment",
+        "MixingInstructions",
+        "ApplicatorNotes"
+      ]
+    },
+    "valueUnitStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "uom",
+        "agency"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/number"
+        },
+        "uom": {
+          "$ref": "#/definitions/string"
+        },
+        "agency": {
+          "$ref": "#/definitions/agencyCodeList"
+        }
+      }
+    }
+  }
+}
