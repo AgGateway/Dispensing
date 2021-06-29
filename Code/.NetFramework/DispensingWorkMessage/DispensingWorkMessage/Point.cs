@@ -1,0 +1,20 @@
+﻿using System.Runtime.Serialization;
+
+namespace DispensingWorkMessage
+{
+ [DataContract]
+ public class Point
+ {
+  #region Serializable Properties
+  /////////////////////////////////////////////////////////////////////////////////////////////
+
+  [DataMember]
+  public double Lat;
+
+  [DataMember]
+  public double Lon;
+
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  #endregion
+ }
+}

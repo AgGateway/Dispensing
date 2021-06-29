@@ -1,0 +1,6 @@
+DispensingWorkMessage/obj/
+DispensingWorkMessage/bin/
+DispensingWorkMessageTest/obj/
+DispensingWorkMessageTest/bin/
+.vs/
+*.g.cs

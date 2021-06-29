@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B9C0C77-F8F6-49EA-9DF7-F5E2AC8C3A37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DispensingWorkMessage</RootNamespace>
+    <AssemblyName>DispensingWorkMessage</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="AssociatedDocument.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Codes.cs" />
+    <Compile Include="GuaranteedAnalysisDetail.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="NutrientSource.cs" />
+    <Compile Include="Nutrient.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductGroup.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="TransportInformation.cs" />
+    <Compile Include="Utilities\Base64ImageUtilities.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
+    <Compile Include="Utilities\FileSpaceUtilities.cs" />
+    <Compile Include="Utilities\JsonUtilities.cs" />
+    <Compile Include="ValueUnit.cs" />
+    <Compile Include="WorkOrder\DispensingWorkOrder.cs" />
+    <Compile Include="WorkRecord\DispensingWorkRecord.cs" />
+    <Compile Include="WorkOrder\OrderProduct.cs" />
+    <Compile Include="WorkOrder\OrderProductGroup.cs" />
+    <Compile Include="DispensingWorkMessage.cs" />
+    <Compile Include="Header.cs" />
+    <Compile Include="Identifier.cs" />
+    <Compile Include="Parties.cs" />
+    <Compile Include="Party.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkRecord\RecordContainer.cs" />
+    <Compile Include="WorkRecord\RecordParties.cs" />
+    <Compile Include="WorkRecord\RecordProduct.cs" />
+    <Compile Include="WorkRecord\RecordProductGroup.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
